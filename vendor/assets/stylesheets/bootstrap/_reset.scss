@@ -152,12 +152,17 @@ textarea {
 
 @media print {
 
-  * {
-    text-shadow: none !important;
-    color: #000 !important; // Black prints faster: h5bp.com/s
-    background: transparent !important;
-    box-shadow: none !important;
-  }
+  // Commenting out these styles to fix issues like this: WEB-24755
+  // i.e. with the css below uncommented, you lose all the important backgrounds and fonts etc when
+  // creating pdfs (prince uses 'print' media when creating pdfs). We don't think we'll ever want this.
+  // Currently, this is the only reason for Agworld forking this gem from v2.3.2.2.
+  //
+  // * {
+  //   text-shadow: none !important;
+  //   color: #000 !important; // Black prints faster: h5bp.com/s
+  //   background: transparent !important;
+  //   box-shadow: none !important;
+  // }
 
   a,
   a:visited {
